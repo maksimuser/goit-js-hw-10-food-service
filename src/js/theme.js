@@ -15,17 +15,15 @@ refs.input.addEventListener('change', handleThemeChahge);
 
 function handleThemeChahge() {
   const onChecked = refs.input.checked;
-  document.body.classList.remove('dark-theme');
-  document.body.classList.add('light-theme');
-
-  localStorage.setItem('Theme', Theme.LIGHT);
-
   if (onChecked) {
     document.body.classList.remove('light-theme');
     document.body.classList.add('dark-theme');
-
     localStorage.setItem('Theme', Theme.DARK);
+    return;
   }
+  document.body.classList.remove('dark-theme');
+  document.body.classList.add('light-theme');
+  localStorage.setItem('Theme', Theme.LIGHT);
 }
 
 function setTheme() {
@@ -35,3 +33,19 @@ function setTheme() {
     document.body.classList = savedTheme;
   }
 }
+
+// МОЙ ВАРИАНТ
+// function handleThemeChahge() {
+//   const onChecked = refs.input.checked;
+//   document.body.classList.remove('dark-theme');
+//   document.body.classList.add('light-theme');
+
+//   localStorage.setItem('Theme', Theme.LIGHT);
+
+//   if (onChecked) {
+//     document.body.classList.remove('light-theme');
+//     document.body.classList.add('dark-theme');
+
+//     localStorage.setItem('Theme', Theme.DARK);
+//   }
+// }
